@@ -42,7 +42,7 @@
                       </div>
                       <div class="form-group">
                           <label for="exampleInputUsername1">Date of Birth:</label>
-                          {{ $TestCovidValue->date_of_birth }}
+                          {{ \Carbon\Carbon::parse($TestCovidValue->date_of_birth)->format('d-m-Y')}}
                       </div>
                       <div class="form-group">
                           <label for="exampleInputUsername1">Address:</label>
@@ -61,7 +61,7 @@
                       </div>
                       <div class="form-group">
                           <label for="exampleInputUsername1">Sampling Date:</label>
-                          {{ $TestCovidValue->sampling_date }}
+                          {{ \Carbon\Carbon::parse($TestCovidValue->sampling_date)->format('d-m-Y')}}
                       </div>
                       <div class="form-group">
                           <label for="exampleInputUsername1">Time of Test:</label>

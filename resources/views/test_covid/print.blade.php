@@ -15,10 +15,10 @@
             <td style="width:25%">NOMOR REGISTER</td><td style="width:5%">:</td><td style="width:20%">{{$data['id']}}</td><td style="width:30%">JENIS KELAMIN</td><td style="width:5%">:</td><td style="width:15%">{{$data['gender']}}</td>
         </tr>
         <tr>
-            <td>NAMA</td><td>:</td><td>{{$data['name']}}</td><td>TANGGAL SAMPLING</td><td>:</td><td>{{$data['sampling_date']}}</td>
+            <td>NAMA</td><td>:</td><td>{{$data['name']}}</td><td>TANGGAL SAMPLING</td><td>:</td><td>{{ \Carbon\Carbon::parse($data['sampling_date'])->format('d-m-Y')}}</td>
         </tr>
         <tr>
-            <td>TANGGAL LAHIR</td><td>:</td><td>{{$data['date_of_birth']}}</td><td>WAKTU PEMERIKSAAN</td><td>:</td><td>{{$data['time_of_test']}}</td>
+            <td>TANGGAL LAHIR</td><td>:</td><td>{{ \Carbon\Carbon::parse($data['date_of_birth'])->format('d-m-Y')}}</td><td>WAKTU PEMERIKSAAN</td><td>:</td><td>{{$data['time_of_test']}}</td>
         </tr>
         <tr>
             <td>NIK/PASSPORT</td><td>:</td><td>{{$data['nik']}}</td><td>LOKASI PEMERIKSAAN</td><td>:</td><td>{{$data['checkpoint']}}</td>
