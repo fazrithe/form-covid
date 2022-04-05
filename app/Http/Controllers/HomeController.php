@@ -28,6 +28,7 @@ class HomeController extends Controller
     {
         $countUser = User::all()->count();
         $countTest = TestCovid::all()->count();
+        Carbon::setLocale('id');
         $time = Carbon::now();
         $TestCovids = TestCovid::with('TestMethod')->limit(5)->get();
         return view('home',compact('countUser','countTest','time','TestCovids'));
