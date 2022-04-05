@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hi</title>
+    <title>Murnicare</title>
 </head>
 <body>
     <table>
         <tr>
-            <td><img src="{{ asset('theme1/images/logo.png') }}" style="width: 200px; height: 100px"></td>
+            <td><img src="{{ asset('theme1/images/logo.png') }}" style="width: 200px; height: 70px"></td>
         </tr>
     </table>
     <br>
