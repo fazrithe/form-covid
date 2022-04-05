@@ -31,12 +31,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', UserController::class);
     Route::resource('test_covids', TestCovidController::class);
     Route::get('testcovid/list', [TestCovidController::class, 'getTestCovid'])->name('testcovid.list');
+    Route::get('print_test/{id}', [TestCovidController::class, 'print_test'])->name('print_test');
+    Route::get('result_pdf/{id}', [TestCovidController::class, 'pdf'])->name('result_pdf');
+    Route::get('qrcode', function () {
+        return QrCode::size(250)
+            ->backgroundColor(255, 255, 204)
+            ->generate('MyNotePaper');
+    });
 });
-Route::get('print_test/{id}', [TestCovidController::class, 'print_test'])->name('print_test');
-Route::get('result_pdf/{id}', [TestCovidController::class, 'pdf'])->name('result_pdf');
 Route::get('view_pdf/{id}', [TestCovidController::class, 'view_pdf'])->name('view_pdf');
-Route::get('qrcode', function () {
-    return QrCode::size(250)
-        ->backgroundColor(255, 255, 204)
-        ->generate('MyNotePaper');
-});
