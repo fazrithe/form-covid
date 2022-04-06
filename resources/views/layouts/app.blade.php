@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Test Covid-19') }}</title>
+    <title>Online SK - MurniCare</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{ asset('theme1/vendors/feather/feather.css') }}">
   <link rel="stylesheet" href="{{ asset('theme1/vendors/mdi/css/materialdesignicons.min.css') }}">

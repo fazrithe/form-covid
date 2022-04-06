@@ -40,3 +40,4 @@ Route::group(['middleware' => ['auth']], function() {
     });
 });
 Route::get('view_pdf/{id}', [TestCovidController::class, 'view_pdf']);
+Route::get('view_result/{id}', [TestCovidController::class, 'view_result']);

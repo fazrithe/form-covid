@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Murnicare</title>
+    <title>Online SK - MurniCare</title>
 </head>
 <body>
-    <table>
+    <table style="width:100%">
         <tr>
-            <td><img src="{{ asset('theme1/images/logo.png') }}" style="width: 200px; height: 70px"></td>
+            <td style="width:30%"><img src="{{ asset('logo.png') }}" style="width: 200px; height: 70px"></td>
+            <td style="width:40%"></td><td style="width:30%"><font color="#0390fc">Where Quality of Life Counts!</font></td>
+        </tr>
+    </table>
+    <table style="width:100%">
+        <tr>
+            <td style="width:100%" align="center"><b>HASIL PEMERIKSAAN {{ $dataMethod['method'] }}</b></td>
+        </tr>
+        <tr>
+            <td style="width:100%" align="center">{{ $dataMethod['method'] }}<i>Test Result</i></td>
         </tr>
     </table>
     <br>
@@ -73,24 +82,40 @@
     </tr>
 </table>
 <br>
-<?php $qrcode = url('view_pdf/'.$data['id'])  ?>
+<?php $qrcode = url('view_result/'.$data['id'])  ?>
 <table style="width:100%">
     <tr>
         <td style="width:20%" align="center">Scan QR For Verification</td><td style="width:40%" align="center"></td><td style="width:40%">Hormat Kami, <br>Sincerely,</td>
     </tr>
     <tr>
-        <td style="width:20%" align="center">{!! QrCode::size(100)->generate($qrcode); !!}</td><td style="width:40%" align="center"></td><td style="width:40%">dr. Oktovia Berlian Kemalaningsih<br>General Practitioner</td>
+        <td style="width:20%" align="center">{!! QrCode::size(100)->generate($qrcode); !!}</td><td style="width:40%" align="center"></td><td style="width:40%"><br><br>dr. Oktovia Berlian Kemalaningsih<br>General Practitioner</td>
     </tr>
 </table>
 <br>
-<table style="width:100%" border="1" cellspacing="0">
+<font size="2px">
+<table style="width:100%">
     <tr>
-        <td style="width:100%"><b>PT Murni Medika Solusindo</b><br>Jl. Lkr. Luar Barat No.1, RT.8/RW.6, Duri Kosambi, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11750
-            Phone: (021) 584-1060
-            info@murnicare.com<br><br>
-            <b>MurniCare Clinic</b><br>
+        <td style="width:30%"><b>PT Murni Medika Solusindo</b><br>Phone: (021) 584-1060<br>Jl. Lkr. Luar Barat No.1, RT.8/RW.6, Duri Kosambi, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11750
+        </td>
+        <td style="width:25%">
+            <b>MurniCare Clinic</b><br>Phone: (021) 584-1060<br>
 Rukan Taman Meruya Blok M No 89 - 92, Jakarta Barat 11620
         </td>
+        <td style="width:25%">
+            <ul>
+                <li>info@murnicare.com</li>
+                <li>www.murnicare.com</li>
+                <li>murnicare</li>
+            </ul>
+        </td>
+        <td style="width:25%">
+            <ul>
+                <li>info@murnicare.com</li>
+                <li>www.murnicare.com</li>
+                <li>murnicare</li>
+            </ul>
+        </td>
+
     </tr>
 </table>
 </body>

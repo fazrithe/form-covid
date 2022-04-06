@@ -209,4 +209,17 @@ class TestCovidController extends Controller
         return view('test_covid.print',compact('data','dataMethod'));
     }
 
+       /**
+     * Display the specified resource.
+     *
+     * @param  \App\TestCovid  $TestCovid
+     * @return \Illuminate\Http\Response
+     */
+    public function view_result($id)
+    {
+       $data = TestCovid::with('TestMethod')->find($id);
+       $dataMethod = TestMethod::where('test_id',$id)->first();
+        return view('test_covid.view_result',compact('data','dataMethod'));
+    }
+
 }
