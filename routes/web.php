@@ -39,4 +39,4 @@ Route::group(['middleware' => ['auth']], function() {
             ->generate('MyNotePaper');
     });
 });
-Route::get('view_pdf/{id}', [TestCovidController::class, 'view_pdf'])->name('view_pdf');
+Route::get('view_pdf/{id}', [TestCovidController::class, 'view_pdf']);
