@@ -179,7 +179,7 @@ class TestCovidController extends Controller
 
         $pdf = PDF::loadView('test_covid/pdf', $data);
 
-        // Storage::put('public/pdf/result_pdf_'.$id.'.pdf', $pdf->output());
+        Storage::put('public/pdf/result_pdf_'.$id.'.pdf', $pdf->output());
 
         return $pdf->download('result_pdf_'.$id.'.pdf');
     }
