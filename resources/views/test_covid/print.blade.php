@@ -15,25 +15,25 @@
             <td style="width:100%" align="center"><b>HASIL PEMERIKSAAN {{ $dataMethod['method'] }}</b></td>
         </tr>
         <tr>
-            <td style="width:100%" align="center">{{ $dataMethod['method'] }}<i>Test Result</i></td>
+            <td style="width:100%" align="center">{{ $dataMethod['method'] }}<i> TEST RESULT</i></td>
         </tr>
     </table>
     <br>
     <table style="width:100%">
         <tr>
-            <td style="width:25%">NOMOR REGISTER</td><td style="width:5%">:</td><td style="width:20%">{{$data['id']}}</td><td style="width:30%">JENIS KELAMIN</td><td style="width:5%">:</td><td style="width:15%">{{$data['gender']}}</td>
+            <td style="width:25%">NOMOR REGISTER<br><em>Reg. Number</em></td><td style="width:5%">:</td><td style="width:20%">{{$data['id']}}</td><td style="width:30%">JENIS KELAMIN<br><em>Gender</em></td><td style="width:5%">:</td><td style="width:15%">{{$data['gender']}}</td>
         </tr>
         <tr>
-            <td>NAMA</td><td>:</td><td>{{$data['name']}}</td><td>TANGGAL SAMPLING</td><td>:</td><td>{{ \Carbon\Carbon::parse($data['sampling_date'])->format('d-m-Y')}}</td>
+            <td>NAMA<br><em>Name</em></td><td>:</td><td>{{$data['name']}}</td><td>TANGGAL SAMPLING<br><em>Sampling Date</em></td><td>:</td><td>{{ \Carbon\Carbon::parse($data['sampling_date'])->format('d-m-Y')}}</td>
         </tr>
         <tr>
-            <td>TANGGAL LAHIR</td><td>:</td><td>{{ \Carbon\Carbon::parse($data['date_of_birth'])->format('d-m-Y')}}</td><td>WAKTU PEMERIKSAAN</td><td>:</td><td>{{$data['time_of_test']}}</td>
+            <td>TANGGAL LAHIR<br><em>Date of Birth</em></td><td>:</td><td>{{ \Carbon\Carbon::parse($data['date_of_birth'])->format('d-m-Y')}}</td><td>WAKTU PEMERIKSAAN<br><em>Time of Test</em></td><td>:</td><td>{{$data['time_of_test']}}</td>
         </tr>
         <tr>
-            <td>NIK/PASSPORT</td><td>:</td><td>{{$data['nik']}}</td><td>LOKASI PEMERIKSAAN</td><td>:</td><td>{{$data['checkpoint']}}</td>
+            <td>NIK/PASSPORT<br><em>National ID/Passport</em></td><td>:</td><td>{{$data['nik']}}</td><td>LOKASI PEMERIKSAAN<br><em>Checkpoint</em></td><td>:</td><td>{{$data['checkpoint']}}</td>
         </tr>
         <tr>
-            <td>ADDRESS</td><td>:</td><td>{{$data['address']}}</td><td></td><td></td><td></td>
+            <td>ALAMAT<br><em>Address</em></td><td>:</td><td>{{$data['address']}}</td><td></td><td></td><td></td>
         </tr>
     </table>
     <table style="width:100%">
@@ -46,7 +46,7 @@
     </table>
     <table style="width:100%" border="1" cellspacing="0">
         <tr>
-            <td style="width:30%" align="center">JENIS PEMERIKSAAN</td><td style="width:20%" align="center">HASIL</td><td style="width:20%" align="center">NILAI RUJUKAN</td><td style="width:30%" align="center">METODE</td>
+            <td style="width:30%" align="center">JENIS PEMERIKSAAN<br><em>Test Name</em></td><td style="width:20%" align="center">HASIL<br><em>Result</em></td><td style="width:20%" align="center">NILAI RUJUKAN<br><em>Normal Range</em></td><td style="width:30%" align="center">METODE<br><em>Method</em></td>
         </tr>
         <tr>
             <td style="width:30%" align="center">{{ $dataMethod['test_name'] }}</td><td style="width:20%" align="center">{{ $dataMethod['result'] }}</td><td style="width:20%" align="center">{{ $dataMethod['normal_range'] }}</td><td style="width:30%" align="center">{{ $dataMethod['method'] }}</td>
@@ -56,28 +56,29 @@
 <label>Catatan (<i>Note</i>):</label><br>
 <table style="width:100%">
     <tr>
-        <td style="width:5%"></td><td style="width:5%">-</td><td style="width:90%">Hasil ini hanya menggambarkan kondisi saat pengambilan spesimen.
-            This result only describes the conditions at the time of specimen collection.</td>
-    </tr>
-    <tr>
-        <td style="width:5%"></td><td style="width:5%">-</td><td style="width:90%">Hasil tes negatif tidak menghilangkan kemungkinan infeksi SARS-COV-2 dan harus dikonfirmasi dengan Test PCR.
-        <br>
-        Negative results do not eliminate the possibility of SARS-COV-2 infection and should be confirmed by PCR Test.
+        <td style="width:5%"></td><td style="width:5%" valign="top">-</td><td style="width:90%">Hasil ini hanya menggambarkan kondisi saat pengambilan spesimen.
+            <br><em>This result only describes the conditions at the time of specimen collection.</em>
         </td>
     </tr>
     <tr>
-        <td style="width:5%"></td><td style="width:5%">-</td><td style="width:90%">Hasil tes positif tidak menutup kemungkinan koinfeksi  dengan pathogen lain.<br>
-            Positive test results do not rule out co-infections with other pathogens.
+        <td style="width:5%"></td><td style="width:5%" valign="top">-</td><td style="width:90%">Hasil tes negatif tidak menghilangkan kemungkinan infeksi SARS-COV-2 dan harus dikonfirmasi dengan Test PCR.
+        <br>
+        <em>Negative results do not eliminate the possibility of SARS-COV-2 infection and should be confirmed by PCR Test.</em>
+        </td>
+    </tr>
+    <tr>
+        <td style="width:5%"></td><td style="width:5%" valign="top">-</td><td style="width:90%">Hasil tes positif tidak menutup kemungkinan koinfeksi  dengan pathogen lain.<br>
+            <em>Positive test results do not rule out co-infections with other pathogens.</em>
             </td>
     </tr>
     <tr>
-        <td style="width:5%"></td><td style="width:5%">-</td><td style="width:90%">Jika timbul gejala klinis, silahkan menghubungi  Dokter/ Fasilitas Kesehatan terdekat.<br>
-            If clinical symptoms arise, please seek help to the nearest doctor/health facility.
+        <td style="width:5%"></td><td style="width:5%" valign="top">-</td><td style="width:90%">Jika timbul gejala klinis, silahkan menghubungi  Dokter/ Fasilitas Kesehatan terdekat.<br>
+            <em>If clinical symptoms arise, please seek help to the nearest doctor/health facility.</em>
             </td>
     </tr>
     <tr>
-        <td style="width:5%"></td><td style="width:5%">-</td><td style="width:90%">Tetap jalankan dan patuhi protokol kesehatan untuk mencegah penularan Covid-19 dan lakukan pemeriksaan ulang sesuai rekomendasi dokter.<br>
-            Please maintain health protocols to prevent Covid-19 transmission and take re-test based on doctor’s recommendation.
+        <td style="width:5%"></td><td style="width:5%" valign="top">-</td><td style="width:90%">Tetap jalankan dan patuhi protokol kesehatan untuk mencegah penularan Covid-19 dan lakukan pemeriksaan ulang sesuai rekomendasi dokter.<br>
+            <em>Please maintain health protocols to prevent Covid-19 transmission and take re-test based on doctor’s recommendation.</em>
             </td>
     </tr>
 </table>
