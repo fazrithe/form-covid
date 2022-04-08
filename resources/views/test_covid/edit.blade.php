@@ -109,6 +109,14 @@
                               <label for="exampleInputUsername1">Method:</label>
                               <input type="text" class="form-control" value="{{ $value->method }}" name="method" value="SWAB ANTIGEN" readonly>
                           </div>
+                          <div class="form-group">
+                            <label for="exampleInputUsername1">Signature:</label>
+                            <select class="form-control" name="signature_id" required>
+                                @foreach($users as $value)
+                                    <option value="{{ $value->id }}" {{ (old('signature_id') ? old('signature_id') : $TestCovidValue->signature_id ?? '') == $value->id ? 'selected' : '' }}>{{ $value->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                           <button type="submit" class="btn btn-sm btn-primary">Submit</button>
 
                       </div>

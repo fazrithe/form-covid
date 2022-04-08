@@ -100,7 +100,9 @@ class TestCovidController extends Controller
         $gender = ['Male','Famale'];
         $result = ['NEGATIVE','POSITIVE'];
         $method = ['SWAB ANTIGEN','SWAB PCR'];
-        return view('test_covid.edit',compact('TestCovidValue','gender','result','method'));
+        $users  = User::all();
+        // dd($users);
+        return view('test_covid.edit',compact('TestCovidValue','gender','result','method','users'));
     }
 
     /**
