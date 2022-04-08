@@ -46,6 +46,7 @@
       @endif
     </td>
     <td>
+        <a class="btn btn-sm btn-warning" href="{{ route('signature.index',$user->id) }}">Signature</a>
        <a class="btn btn-sm btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
        <a class="btn btn-sm btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
         {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}

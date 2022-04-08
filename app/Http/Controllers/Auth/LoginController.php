@@ -35,6 +35,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        $this->redirectTo = route('test_covids.index');
         $this->middleware('guest')->except('logout');
     }
 }

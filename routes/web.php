@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TestCovidController;
+use App\Http\Controllers\SignatureController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +25,8 @@ use App\Http\Controllers\TestCovidController;
 Route::redirect('/', '/login');
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
 Route::group(['middleware' => ['auth']], function() {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('test_covids', TestCovidController::class);
@@ -38,6 +38,8 @@ Route::group(['middleware' => ['auth']], function() {
             ->backgroundColor(255, 255, 204)
             ->generate('MyNotePaper');
     });
+    Route::get('signature/{id}', [SignatureController::class,'index'])->name('signature.index');
+    Route::post('signatureStore', [SignatureController::class,'store'])->name('signature.store');
 });
 Route::get('view_pdf/{id}', [TestCovidController::class, 'view_pdf']);
 Route::get('view_result/{id}', [TestCovidController::class, 'view_result']);
