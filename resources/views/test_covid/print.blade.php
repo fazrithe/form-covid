@@ -97,7 +97,7 @@
         <td style="width:20%" align="center">Scan QR For Verification</td><td style="width:40%" align="center"></td><td style="width:40%">Hormat Kami, <br>Sincerely,</td>
     </tr>
     <tr>
-        <td style="width:20%" align="center">{!! QrCode::size(100)->generate($qrcode); !!}</td><td style="width:40%" align="center"></td><td style="width:40%"><img src="{{ asset('signature/'.$data->user->signature) }}" style="width: 200px; height: 70px"><br> @if(!empty($data->user->name)){{ $data->user->name }}@endif<br>General Practitioner</td>
+        <td style="width:20%" align="center">{!! QrCode::size(100)->generate($qrcode); !!}</td><td style="width:40%" align="center"></td><td style="width:40%"><img src="{{ asset('public/signature/'.$data->user->signature) }}" style="width: 200px; height: 70px"><br> @if(!empty($data->user->name)){{ $data->user->name }}@endif<br>General Practitioner</td>
     </tr>
 </table>
 <br>
