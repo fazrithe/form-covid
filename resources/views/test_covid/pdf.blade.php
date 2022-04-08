@@ -2,6 +2,12 @@
 <html>
 <head>
     <title>Online SK - MurniCare</title>
+    <style>
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
     <table style="width:100%">
@@ -89,7 +95,7 @@
         <td style="width:20%" align="center">Scan QR For Verification</td><td style="width:40%" align="center"></td><td style="width:40%">Hormat Kami, <br>Sincerely,</td>
     </tr>
     <tr>
-        <td style="width:20%" align="center"><img src="data:image/png;base64, {{ base64_encode(QrCode::size(100)->generate($qrcode)) }} "></td><td style="width:40%" align="center"></td><td style="width:40%"><br><br>dr. Oktovia Berlian Kemalaningsih<br>General Practitioner</td>
+        <td style="width:20%" align="center"><img src="data:image/png;base64, {{ base64_encode(QrCode::size(100)->generate($qrcode)) }} "></td><td style="width:40%" align="center"></td><td style="width:40%"><img src="{{ public_path('signature/'.$signature) }}" style="width: 200px; height: 70px"><br>@if(!empty($user_name)){{ $user_name }}@endif<br>General Practitioner</td>
     </tr>
 </table>
 <br>

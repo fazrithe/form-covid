@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TestCovid;
 use App\Models\TestMethod;
+use App\Models\User;
 use Illuminate\Http\Request;
 use PDF;
 use Illuminate\Support\Facades\Storage;
@@ -42,7 +43,8 @@ class TestCovidController extends Controller
      */
     public function create()
     {
-        return view('test_covid.create');
+        $users = User::all();
+        return view('test_covid.create', compact('users'));
     }
 
     /**
@@ -80,7 +82,8 @@ class TestCovidController extends Controller
      */
     public function show(TestCovid $TestCovid)
     {
-        $TestCovidValue = TestCovid::with('TestMethod')->find($TestCovid->id);
+        $TestCovidValue = TestCovid::with('TestMethod','user')->find($TestCovid->id);
+
         return view('test_covid.show',compact('TestCovidValue'));
     }
 
@@ -95,9 +98,9 @@ class TestCovidController extends Controller
 
         $TestCovidValue = TestCovid::with('TestMethod')->find($TestCovid->id);
         $gender = ['Male','Famale'];
-        $normalRange = ['NEGATIVE','POSITIVE'];
+        $result = ['NEGATIVE','POSITIVE'];
         $method = ['SWAB ANTIGEN','SWAB PCR'];
-        return view('test_covid.edit',compact('TestCovidValue','gender','normalRange','method'));
+        return view('test_covid.edit',compact('TestCovidValue','gender','result','method'));
     }
 
     /**
@@ -154,7 +157,7 @@ class TestCovidController extends Controller
 
 
         $TestCovidValue = TestCovid::with('TestMethod')->find($id);
-        // return $TestCovidValue;
+        // return $TestCovidValue->user->signature;
         foreach($TestCovidValue->TestMethod as $value){
             $test_name = $value->test_name;
             $result = $value->result;
@@ -175,9 +178,11 @@ class TestCovidController extends Controller
             'result' => $result,
             'normal_range' => $normal_range,
             'method' => $method,
+            'user_name' => $TestCovidValue->user->name,
+            'signature' => $TestCovidValue->user->signature,
         ];
 
-        $pdf = PDF::loadView('test_covid/pdf', $data);
+        $pdf = PDF::loadView('test_covid/pdf', $data)->setPaper('a4', 'potrait');
 
         Storage::put('pdf/result_pdf_'.$id.'.pdf', $pdf->output());
 
@@ -203,9 +208,9 @@ class TestCovidController extends Controller
      */
     public function print_test($id)
     {
-        // return ('ss');
-        $data = TestCovid::with('TestMethod')->find($id);
+        $data = TestCovid::with('TestMethod','user')->find($id);
         $dataMethod = TestMethod::where('test_id',$id)->first();
+        // return $data->user->signature;
         return view('test_covid.print',compact('data','dataMethod'));
     }
 

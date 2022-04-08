@@ -96,6 +96,12 @@
                           <label for="exampleInputUsername1">Method:</label>
                             {{ $value->method }}
                       </div>
+                      <div class="form-group">
+                        <label for="exampleInputUsername1">Signature:</label>
+                        @if(!empty($TestCovidValue->user->name))
+                          {{ $TestCovidValue->user->name }}
+                          @endif
+                    </div>
                   </div>
               </div>
               @endforeach

@@ -40,7 +40,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Name:</label>
-                                <input class="form-control" name="name" placeholder="Nama" required>
+                                <input class="form-control" name="name" placeholder="Name" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Date of Birth:</label>
@@ -48,7 +48,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Address:</label>
-                                <textarea class="form-control" name="address" placeholder="Alamat"></textarea>
+                                <textarea class="form-control" name="address" placeholder="Address"></textarea>
                             </div>
 		                </div>
                     </div>
@@ -73,7 +73,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Checkpoint:</label>
-                                <input class="form-control" name="checkpoint" placeholder="Status Pemeriksaan">
+                                <input class="form-control" name="checkpoint" placeholder="Checkpoint" value="MURNI CARE" readonly required>
                             </div>
 		                </div>
                     </div>
@@ -83,28 +83,33 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Test Name:</label>
-                               <input type="text" name="test_name" class="form-control" placeholder="Jenis Test">
+                               <input type="text" name="test_name" class="form-control" value="SWAB ANTIGEN" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Result:</label>
-                                <input type="text" name="result" class="form-control" placeholder="Hasil">
-                            </div>
-                            <div class="col-4">
-                            <div class="form-group">
-                                <label for="exampleInputUsername1">Normal Range:</label>
-                                <select class="form-control" name="normal_range">
+                                <select class="form-control" name="result">
                                     <option value="">--Select--</option>
                                     <option value="NEGATIVE">NEGATIVE</option>
                                     <option value="POSITIVE">POSITIVE</option>
                                 </select>
                             </div>
+                            <div class="col-4">
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Normal Range:</label>
+                               <input type="text" class="form-control" name="normal_range" value="NEGATIVE" readonly>
+                            </div>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Method:</label>
-                                <select class="form-control" name="method">
+                                <input type="text" class="form-control" name="method" value="SWAB ANTIGEN" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Signature:</label>
+                                <select class="form-control" name="signature_id" required>
                                     <option value="">--Select--</option>
-                                    <option value="SWAB ANTIGEN">SWAB ANTIGEN</option>
-                                    <option value="SWAB PCR">SWAB PCR</option>
+                                    @foreach($users as $value)
+                                    <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-sm btn-primary">Submit</button>

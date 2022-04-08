@@ -18,12 +18,17 @@ class TestCovid extends Model
     public $table = 'test_covids';
 
     protected $fillable = [
-        'id', 'nik', 'name', 'gender', 'date_of_birth', 'sampling_date', 'time_of_test', 'checkpoint', 'address', 'status'
+        'id', 'nik', 'name', 'gender', 'date_of_birth', 'sampling_date', 'time_of_test', 'checkpoint', 'address', 'status', 'signature_id'
     ];
 
     public function TestMethod()
     {
         return $this->hasMany(TestMethod::class, 'test_id');
+    }
+
+    public function User()
+    {
+        return $this->belongsTo(User::class, 'signature_id');
     }
 
 }

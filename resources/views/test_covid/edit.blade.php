@@ -77,7 +77,7 @@
                           </div>
                           <div class="form-group">
                               <label for="exampleInputUsername1">Checkpoint:</label>
-                              <input class="form-control" name="checkpoint" value="{{ $TestCovidValue->checkpoint }}" placeholder="Status Pemeriksaan">
+                              <input class="form-control" name="checkpoint" value="{{ $TestCovidValue->checkpoint }}" placeholder="Status Pemeriksaan" readonly>
                           </div>
                       </div>
                   </div>
@@ -89,29 +89,25 @@
                           <div class="form-group">
                               <label for="exampleInputUsername1">Test Name:</label>
                               <input type="hidden" name="method_id" value="{{ $value->id }}">
-                             <input type="text" name="test_name" value="{{ $value->test_name }}" class="form-control" placeholder="Jenis Test">
+                             <input type="text" name="test_name" value="{{ $value->test_name }}" class="form-control" placeholder="Jenis Test" readonly>
                           </div>
                           <div class="form-group">
                               <label for="exampleInputUsername1">Result:</label>
-                              <input type="text" name="result" value="{{ $value->result }}" class="form-control" placeholder="Hasil">
+                              <select class="form-control" name="result" required>
+                                @foreach($result as $name)
+                                    <option value="{{ $name }}" {{ (old('normalRange') ? old('normalRange') : $value->result ?? '') == $name ? 'selected' : '' }}>{{ $name }}</option>
+                                @endforeach
+                            </select>
                           </div>
                           <div class="col-4">
                           <div class="form-group">
                               <label for="exampleInputUsername1">Normal Range:</label>
-                              <select class="form-control" name="normal_range" required>
-                                @foreach($normalRange as $name)
-                                    <option value="{{ $name }}" {{ (old('normalRange') ? old('normalRange') : $value->normal_range ?? '') == $name ? 'selected' : '' }}>{{ $name }}</option>
-                                @endforeach
-                            </select>
+                              <input type="text" name="normal_range" value="{{ $value->normal_range }}" class="form-control" placeholder="Normal Range" readonly>
                           </div>
                           </div>
                           <div class="form-group">
                               <label for="exampleInputUsername1">Method:</label>
-                              <select class="form-control" name="method" required>
-                                @foreach($method as $name)
-                                    <option value="{{ $name }}" {{ (old('method') ? old('method') : $value->method ?? '') == $name ? 'selected' : '' }}>{{ $name }}</option>
-                                @endforeach
-                            </select>
+                              <input type="text" class="form-control" value="{{ $value->method }}" name="method" value="SWAB ANTIGEN" readonly>
                           </div>
                           <button type="submit" class="btn btn-sm btn-primary">Submit</button>
 
