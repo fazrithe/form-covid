@@ -97,7 +97,7 @@ class TestCovidController extends Controller
     {
 
         $TestCovidValue = TestCovid::with('TestMethod')->find($TestCovid->id);
-        $gender = ['Male','Famale'];
+        $gender = ['Male','Female'];
         $result = ['NEGATIVE','POSITIVE'];
         $method = ['SWAB ANTIGEN','SWAB PCR'];
         $users  = User::all();
