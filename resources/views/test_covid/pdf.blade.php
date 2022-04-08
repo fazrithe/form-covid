@@ -4,9 +4,13 @@
     <title>Online SK - MurniCare</title>
     <style>
         body{
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
             font-size: 14px;
         }
+        @font-face {
+         font-family: "Font Digital";
+         src: asset('public/theme1/fonts/Poppins/Poppins-blac.ttf');
+         }
     </style>
 </head>
 <body>
@@ -100,31 +104,13 @@
 </table>
 <br>
 <font size="8px">
-<table style="width:100%">
-    <tr>
-        <td style="width:30%"><b>PT Murni Medika Solusindo</b><br>Phone: (021) 584-1060<br>Jl. Lkr. Luar Barat No.1, RT.8/RW.6, Duri Kosambi, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11750
-        </td>
-        <td style="width:25%">
-            <b>MurniCare Clinic</b><br>Phone: (021) 584-1060<br>
-Rukan Taman Meruya Blok M No 89 - 92, Jakarta Barat 11620
-        </td>
-        <td style="width:25%">
-            <ul>
-                <li>info@murnicare.com</li>
-                <li>www.murnicare.com</li>
-                <li>murnicare</li>
-            </ul>
-        </td>
-        <td style="width:25%">
-            <ul>
-                <li>info@murnicare.com</li>
-                <li>www.murnicare.com</li>
-                <li>murnicare</li>
-            </ul>
-        </td>
-
-    </tr>
-</table>
+    <table style="width:100%">
+        <tr>
+            <td>
+                <img src="{{ public_path('theme1/images/footer_.png') }}" style="width: 700px; height: 80px">
+            </td>
+        </tr>
+    </table>
 </font>
 </body>
 </html>

@@ -2,10 +2,12 @@
 <html>
 <head>
     <title>Online SK - MurniCare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <style>
         body{
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 14px;
+            font-size: 22px;
         }
     </style>
 </head>
@@ -102,27 +104,9 @@
 <font size="2px">
 <table style="width:100%">
     <tr>
-        <td style="width:30%"><b>PT Murni Medika Solusindo</b><br>Phone: (021) 584-1060<br>Jl. Lkr. Luar Barat No.1, RT.8/RW.6, Duri Kosambi, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11750
+        <td>
+            <img src="{{ asset('theme1/images/footer_.png') }}" style="width: 1200px; height: 120px">
         </td>
-        <td style="width:25%">
-            <b>MurniCare Clinic</b><br>Phone: (021) 584-1060<br>
-Rukan Taman Meruya Blok M No 89 - 92, Jakarta Barat 11620
-        </td>
-        <td style="width:25%">
-            <ul>
-                <li>info@murnicare.com</li>
-                <li>www.murnicare.com</li>
-                <li>murnicare</li>
-            </ul>
-        </td>
-        <td style="width:25%">
-            <ul>
-                <li>info@murnicare.com</li>
-                <li>www.murnicare.com</li>
-                <li>murnicare</li>
-            </ul>
-        </td>
-
     </tr>
 </table>
 </body>
