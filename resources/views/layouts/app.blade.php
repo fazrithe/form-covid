@@ -373,7 +373,7 @@
   <script src="{{ asset('theme1/js/dashboard.js') }}"></script>
   <script src="{{ asset('theme1/js/Chart.roundedBarCharts.js') }}"></script>
   <script src="{{ asset('theme1/js/Chart.roundedBarCharts.js') }}"></script>
-  <script src="{{ asset('theme1/plugins/jquery/jquery.min.js') }}"></script>
+  {{-- <script src="{{ asset('theme1/plugins/jquery/jquery.min.js') }}"></script> --}}
 <!-- Bootstrap 4 -->
 <script src="{{ asset('theme1/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- DataTables  & Plugins -->
