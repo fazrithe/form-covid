@@ -392,7 +392,7 @@
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script type="text/javascript" src="http://keith-wood.name/js/jquery.signature.js"></script>
+<script type="text/javascript" src="{{ asset('signature/js/jquery.signature.min.js') }}"></script>
 <script type="text/javascript">
     var sig = $('#sig').signature({syncField: '#signature', syncFormat: 'PNG'});
     $('#clear').click(function(e) {
