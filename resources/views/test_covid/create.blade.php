@@ -60,7 +60,7 @@
                                 <label for="exampleInputUsername1">Gender:</label>
                                 <select class="form-control" name="gender">
                                     <option value="Male">Male</option>
-                                    <option value="Famale">Famale</option>
+                                    <option value="Famale">Female</option>
                                 </select>
                             </div>
                             <div class="form-group">
